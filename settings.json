@@ -132,7 +132,7 @@
     }
   },
   "effortLevel": "high",
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "sandbox": {
     "enabled": true
   }
