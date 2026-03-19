@@ -94,17 +94,17 @@
       "WebFetch(domain:staging.kognic.com)",
       "WebFetch(domain:staging.kognic.io)"
     ],
+    "deny": [
+      "Bash(git push * -f *)",
+      "Bash(git push * -f)",
+      "Bash(git push *--force*)"
+    ],
     "additionalDirectories": [
       "~/code/kognic",
       "~/code/kognic_terraform",
       "~/code/private",
       "~/code/public",
       "~/code/tmp"
-    ],
-    "deny": [
-      "Bash(git push * -f *)",
-      "Bash(git push * -f)",
-      "Bash(git push *--force*)"
     ]
   },
   "enabledPlugins": {
@@ -120,7 +120,8 @@
     "kognic-git@kognic-claude-plugins": true,
     "kognic-golang@kognic-claude-plugins": true,
     "kognic-python@kognic-claude-plugins": true,
-    "anthropic-review-pr@kognic-claude-plugins": true
+    "anthropic-review-pr@kognic-claude-plugins": true,
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "kognic-claude-plugins": {
@@ -129,11 +130,25 @@
         "repo": "kognic-internal/claude-plugins"
       },
       "autoUpdate": true
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
     }
   },
-  "effortLevel": "high",
-  "alwaysThinkingEnabled": false,
   "sandbox": {
-    "enabled": true
-  }
+    "enabled": true,
+    "enableWeakerNetworkIsolation": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "api.github.com",
+        "*.googleapis.com"
+      ]
+    }
+  },
+  "alwaysThinkingEnabled": false,
+  "effortLevel": "high"
 }
