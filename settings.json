@@ -144,14 +144,24 @@
   },
   "sandbox": {
     "enabled": true,
-    "enableWeakerNetworkIsolation": true,
+    "filesystem": {
+      "read": {
+        "deny": [
+          "~/.ssh",
+          "~/.gnupg",
+          "~/.aws",
+          "~/.config/gcloud"
+        ]
+      }
+    },
     "network": {
       "allowedDomains": [
         "github.com",
         "api.github.com",
         "*.googleapis.com"
       ]
-    }
+    },
+    "enableWeakerNetworkIsolation": true
   },
   "alwaysThinkingEnabled": false,
   "effortLevel": "high"
