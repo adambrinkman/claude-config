@@ -11,3 +11,4 @@
 - Never use command substitution (`$(...)` or backticks) in Bash tool calls — capture the output in a prior step and use it directly, or use built-in tools
 - Use LSP diagnostics and go-to-definition to understand code — don't guess at types or imports by grepping
 - Grafana: always use the Grafana MCP server tools for querying dashboards, logs, metrics, alerts, and incidents — never curl or WebFetch the Grafana web UI
+- When a tool or CLI command fails (including silent failures), flag it immediately — don't try workarounds before telling me
